@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------
+# Question Answering System using Deep Learning - Python dependencies
+#
+# IMPORTANT: Install PyTorch FIRST (CPU build is recommended for laptops):
+#     pip install torch --index-url https://download.pytorch.org/whl/cpu
+# Then install the rest:
+#     pip install -r requirements.txt
+# (pip will skip torch if it is already installed)
+# ---------------------------------------------------------------------------
+
+flask>=3.0
+flask-cors>=4.0
+numpy>=1.24
+tqdm>=4.65
+matplotlib>=3.7
