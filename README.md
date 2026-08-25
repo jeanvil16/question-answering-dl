@@ -445,23 +445,3 @@ question-answering-system/
 8. **Multilingual support**: Extend the tokenizer and model to handle non-English text
 
 ---
-
-## How to Explain This Project (Academic Viva)
-
-**Q: What is Question Answering?**
-A: QA is an NLP task where a system reads a passage and answers a question about it. Extractive QA specifically locates the answer as a span within the passage.
-
-**Q: Why embeddings?**
-A: Words need to be represented as numbers for neural networks. Embeddings map each word to a dense vector that captures semantic meaning — similar words have similar vectors.
-
-**Q: Why CNN?**
-A: CNNs detect local n-gram patterns regardless of position. A filter for "white marble" fires wherever those words appear, giving the model translation-invariant features before sequential processing.
-
-**Q: Why BiLSTM?**
-A: Answers depend on long-range context. BiLSTM reads the sequence in both directions, so each token's representation includes information from the entire passage.
-
-**Q: How are start/end positions predicted?**
-A: Two separate linear layers output a score for every context position. During training, cross-entropy loss is applied to both. At inference, the position pair with the highest combined score (within a max-length constraint) is selected.
-
-**Q: How is the answer extracted?**
-A: The predicted token indices are mapped back to character offsets in the original context string, and the substring is extracted directly.
