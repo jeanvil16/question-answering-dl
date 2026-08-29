@@ -332,6 +332,24 @@ python dataset/download_squad.py
 python training/train.py --train-file dataset/train-v1.1.json --val-file dataset/dev-v1.1.json --epochs 3
 ```
 
+## Running in Google Colab (no local setup)
+
+A ready-to-run notebook is included at `notebooks/question_answering_colab.ipynb`.
+It clones the repository into the Colab cloud VM and walks through dataset
+exploration, model training, chart visualisation, live inference, and
+downloading the trained weights for use with the local app.
+
+1. Open <https://colab.research.google.com>
+2. **File → Upload notebook** → select `notebooks/question_answering_colab.ipynb`
+   (or open the file directly from your GitHub repo)
+3. Choose **Runtime → Change runtime type → GPU** for faster training
+4. Run the cells top-to-bottom
+
+The notebook is self-contained: it installs its own dependencies, fetches the
+project from GitHub, trains on the built-in sample dataset, and lets you
+download the resulting `saved_models/` artifacts to run the Flask + React app
+locally.
+
 ---
 
 ## How to Start the Backend
@@ -412,7 +430,9 @@ question-answering-system/
 │   ├── sample_data_builder.py # Generates the sample file
 │   └── download_squad.py      # Downloads full SQuAD v1.1
 ├── saved_models/              # Trained checkpoint + vocab + config
-├── notebooks/                 # Jupyter notebook walkthrough
+├── notebooks/                 # Jupyter notebooks
+│   ├── question_answering_colab.ipynb  # Google Colab end-to-end notebook
+│   └── model_walkthrough.ipynb         # Local architecture walkthrough
 ├── requirements.txt           # Python dependencies
 ├── setup_windows.bat          # One-click setup (Windows)
 ├── setup_unix.sh              # One-click setup (macOS/Linux)
